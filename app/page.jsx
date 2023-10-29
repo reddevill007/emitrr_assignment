@@ -5,6 +5,7 @@ const Home = () => {
     return (
         <div>
             <Hero />
+            <div id='category'></div>
             <CategoryList />
         </div>
     );

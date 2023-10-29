@@ -1,5 +1,4 @@
 import { db } from "@/lib/db";
-import { users } from "@/lib/users";
 import prisma from "@/prisma";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";

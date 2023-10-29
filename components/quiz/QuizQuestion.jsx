@@ -23,10 +23,10 @@ const QuizQuestion = ({ question, queNo, setScore, score }) => {
                 {question.options.map((option, index) => (
                     <li key={index}>
                         <button
-                            className={`border rounded px-6 py-4 ${selectedAnswer === index ? 'bg-pink-100' : 'bg-white'}`}
+                            className={`border border-black rounded px-6 py-4 ${selectedAnswer === index ? 'bg-blue-100' : 'bg-white'}`}
                             onClick={() => checkAnswer(question.marks, question.correctAnswer, option, index)}
                         >
-                            <span className='border px-3 py-2 rounded-full mr-2 h-16 w-16'>{OPTIONS[index]}</span>
+                            <span className='border border-black px-3 py-2 rounded-full mr-2 h-16 w-16'>{OPTIONS[index]}</span>
                             {option}
                         </button>
                     </li>

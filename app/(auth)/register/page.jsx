@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -41,13 +42,14 @@ const signInPage = () => {
     };
 
     return (
-        <section className="flex items-center justify-center w-full h-screen">
+        <section className="flex items-center justify-center w-full h-screen z-100 fixed top-0 left-0 bg-white">
             <div className="flex flex-col w-[500px] p-10 gap-10">
                 <h1>Signin </h1>
                 <Input type="text" placeholder="Name..." onChange={(e) => setName(e.target.value)} />
                 <Input type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} />
                 <Input type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)} />
                 <Button className="border rounded-[10px]" onClick={handleSignin}>Create account</Button>
+                <Link href="/login" className="underline underline-offset-2 text-center">Already have an account</Link>
             </div>
         </section>
     )

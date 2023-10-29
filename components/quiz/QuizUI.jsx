@@ -1,21 +1,20 @@
 "use client"
 
-import { useState } from 'react';
-import { quizData } from '@/data/quizData';
+import { useState } from "react";
 import QuizQuestion from '@/components/quiz/QuizQuestion';
 import { useSession } from 'next-auth/react';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
 
-const Quiz = ({ params, searchParams }) => {
-    const { status } = useSession();
+const QuizUI = ({ selectedCategory, currentScore, userId }) => {
     const router = useRouter();
-    const { q } = searchParams;
 
-    const selectedCategory = quizData[q];
+    const { status, data } = useSession();
+
     const questions = selectedCategory.questions;
 
     const [score, setScore] = useState(0);
+    const [user, setUser] = useState()
 
     const calculateMarks = () => {
         alert(`You Score ${score}`)
@@ -25,6 +24,15 @@ const Quiz = ({ params, searchParams }) => {
         toast.error("Please Login")
         router.push("/login");
     }
+
+    const handlesubmit = async (id, totalPoints) => {
+        console.log("clicked");
+        const res = await fetch(`/api/users/${id}`, {
+            method: "POST",
+            body: JSON.stringify({ totalPoints }),
+        });
+        router.push(`/result?score=${score}&cat=${selectedCategory.category}`);
+    };
 
     return (
         <div className='p-10 mt-16'>
@@ -41,10 +49,10 @@ const Quiz = ({ params, searchParams }) => {
                     ))}
                 </div>
 
-                <button className="border rounded-[10px] px-6 py-4 bg-black" onClick={calculateMarks}>Submit</button>
+                <button className="border rounded-[10px] px-6 py-4 bg-black" onClick={() => handlesubmit(userId, currentScore + score)}>Submit</button>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Quiz;
+export default QuizUI

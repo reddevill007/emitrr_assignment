@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -39,6 +40,7 @@ const LoginPage = () => {
                 <Input type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} />
                 <Input type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)} />
                 <Button className="border rounded-[10px]" onClick={handleLogin}>Login</Button>
+                <Link href="/register" className="underline underline-offset-2 text-center">Don't have an account Signup</Link>
             </div>
         </section>
     )

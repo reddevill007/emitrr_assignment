@@ -17,4 +17,5 @@ model User {
   hashedPassword String
   emailVerified  DateTime?
   image          String?
+  score          Int
 }

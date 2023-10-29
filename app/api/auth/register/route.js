@@ -6,6 +6,7 @@ import bcrypt from "bcrypt";
 export const POST = async (req) => {
   try {
     const { name, email, password } = await req.json();
+    const score = 0;
 
     if (!name || !email || !password)
       return NextResponse.json({ message: "Invalid Data" }, { status: 422 });
@@ -14,7 +15,7 @@ export const POST = async (req) => {
     await db();
 
     const newUser = await prisma.user.create({
-      data: { email, name, hashedPassword },
+      data: { email, name, hashedPassword, score },
     });
 
     return NextResponse.json({ newUser }, { status: 201 });

@@ -1,33 +1,37 @@
 "use client"
 
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { toast } from 'sonner'
+
+const OPTIONS = ["A", "B", "C"]
 
 const QuizQuestion = ({ question, queNo, setScore, score }) => {
-    const [marked, setMarked] = useState(false);
-    const [isCorrect, setIsCorrect] = useState(false);
     const [selectedAnswer, setselectedAnswer] = useState()
 
     const checkAnswer = (marks, correctAnswer, option, i) => {
         if (option === correctAnswer) {
             setScore(score + marks);
-            setIsCorrect(true)
-        } else {
-            setIsCorrect(false)
         }
-        setMarked(true)
+        toast.success('Be at the area 10 minutes before the event time')
         setselectedAnswer(i)
     }
+
     return (
         <div>
             <h1 className='border-b pb-4 mb-4'>Question {queNo + 1}: {question.question}</h1>
-            <ul className='flex flex-col gap-5'>
+            <ul className='flex flex-col w-full gap-5'>
                 {question.options.map((option, index) => (
                     <li key={index}>
-                        <button className={`${selectedAnswer === index ? 'bg-yellow-400' : 'bg-white'}`} onClick={() => checkAnswer(question.marks, question.correctAnswer, option, index)}>{option}</button>
+                        <button
+                            className={`border rounded px-6 py-4 ${selectedAnswer === index ? 'bg-pink-100' : 'bg-white'}`}
+                            onClick={() => checkAnswer(question.marks, question.correctAnswer, option, index)}
+                        >
+                            <span className='border px-3 py-2 rounded-full mr-2 h-16 w-16'>{OPTIONS[index]}</span>
+                            {option}
+                        </button>
                     </li>
                 ))}
             </ul>
-            {marked && <p className={`${isCorrect ? 'bg-green-900' : 'bg-red-900'}`}>Answer Marked</p>}
         </div>
     )
 }

@@ -1,19 +1,13 @@
-import Link from 'next/link';
-import { quizData } from '@/data/quizData';
+import CategoryList from '@/components/category/CategoryList';
+import Hero from '@/components/home/Hero';
 
-const Home = () => (
-    <div>
-        <h1>Choose a Quiz Category</h1>
-        <ul>
-            {quizData.map((category, index) => (
-                <li key={index}>
-                    <Link href={`/${category.category}?q=${category.id}`}>
-                        {category.category}
-                    </Link>
-                </li>
-            ))}
-        </ul>
-    </div>
-);
+const Home = () => {
+    return (
+        <div>
+            <Hero />
+            <CategoryList />
+        </div>
+    );
+}
 
 export default Home;

@@ -2,6 +2,7 @@ export const quizData = [
   {
     id: 0,
     category: "Programming",
+    img: "/programming.png",
     questions: [
       {
         question: "What does HTML stand for?",
@@ -97,6 +98,7 @@ export const quizData = [
   {
     id: 1,
     category: "Physics",
+    img: "/physics.png",
     questions: [
       {
         question: "What is the SI unit of force?",
@@ -178,6 +180,7 @@ export const quizData = [
   {
     id: 2,
     category: "Maths",
+    img: "/maths.png",
     questions: [
       {
         question: "What is the value of π (pi) to two decimal places?",
@@ -259,6 +262,7 @@ export const quizData = [
   {
     id: 3,
     category: "Computer Networks",
+    img: "/cn.png",
     questions: [
       {
         question: "What does 'HTTP' stand for in the context of the internet?",
@@ -357,6 +361,7 @@ export const quizData = [
   {
     id: 4,
     category: "Aptitude",
+    img: "/apti.jpeg",
     questions: [
       {
         question: "If x = 3 and y = 5, what is the value of 2x + 3y?",
@@ -425,6 +430,7 @@ export const quizData = [
   {
     id: 5,
     category: "Operating System",
+    img: "/os.png",
     questions: [
       {
         question: "What is the main function of an operating system?",

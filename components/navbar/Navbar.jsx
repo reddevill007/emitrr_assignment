@@ -10,7 +10,9 @@ const Navbar = () => {
     const { status, data } = useSession();
     return (
         <nav className='fixed top-0 left-0 w-full h-16 flex justify-between items-center bg-white px-10'>
-            <img src="/logo.jpg" className="h-14 w-14" alt="" />
+            <Link href="/">
+                <img src="/logo.jpg" className="h-14 w-14" alt="" />
+            </Link>
 
             {status === "unauthenticated" && <Link href="/login">Login</Link>}
             {status === "loading" && <ColorRing

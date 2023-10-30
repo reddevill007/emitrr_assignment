@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import AuthProvider from "@/providers/AuthProvider";
 import Navbar from "@/components/navbar/Navbar";
+import NextTopLoader from "nextjs-toploader";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={spaceGrotesk.className}>
         <AuthProvider>
+          <NextTopLoader showSpinner={false} />
           <Navbar />
           <Toaster position="top-center" richColors />
           {children}

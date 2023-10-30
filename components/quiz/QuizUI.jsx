@@ -46,6 +46,7 @@ const QuizUI = ({ selectedCategory, currentScore, userId }) => {
                             queNo={i}
                             setScore={setScore}
                             score={score}
+                            key={i}
                         />
                     ))}
                 </div>

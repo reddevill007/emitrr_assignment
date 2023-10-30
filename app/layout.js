@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={spaceGrotesk.className} suppressHydrationWarning={true}>
+      <body className={spaceGrotesk.className}>
         <AuthProvider>
           <NextTopLoader showSpinner={false} />
           <Navbar />

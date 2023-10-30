@@ -19,9 +19,9 @@ const QuizQuestion = ({ question, queNo, setScore, score }) => {
     return (
         <div>
             <h1 className='border-b pb-4 mb-4'>Question {queNo + 1}: {question.question}</h1>
-            <ul className='flex flex-col w-full gap-5'>
+            <div className='flex flex-col w-full gap-5'>
                 {question.options.map((option, index) => (
-                    <li key={index}>
+                    <div key={index}>
                         <button
                             className={`border border-black rounded px-6 py-4 ${selectedAnswer === index ? 'bg-blue-100' : 'bg-white'}`}
                             onClick={() => checkAnswer(question.marks, question.correctAnswer, option, index)}
@@ -29,9 +29,9 @@ const QuizQuestion = ({ question, queNo, setScore, score }) => {
                             <span className='border border-black px-3 py-2 rounded-full mr-2 h-16 w-16'>{OPTIONS[index]}</span>
                             {option}
                         </button>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     )
 }

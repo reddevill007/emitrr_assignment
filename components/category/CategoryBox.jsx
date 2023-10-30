@@ -8,7 +8,7 @@ const CategoryBox = ({ category, index }) => {
                 <img src={category.img} className='w-[60%]' alt="" />
             </div>
             <h2 className='bg-blue-400 w-fit text-sm px-2 py-1 rounded'>{category.category}</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit laboriosam et, nam assumenda deserunt?...</p>
+            <p>{category.desc}</p>
             <Link className='border rounded-[10px] px-3 py-2 w-fit' href={`/quiz/${category.category}?q=${category.id}`}>
                 Attempt Quiz
             </Link>

@@ -14,6 +14,10 @@ const getData = async () => {
     return res.json();
 }
 
+export const metadata = {
+    title: "Quiz - Result Page",
+};
+
 const ResultPage = async ({ searchParams }) => {
     const { score, cat } = searchParams
     const { user } = await getServerSession(authOptions);

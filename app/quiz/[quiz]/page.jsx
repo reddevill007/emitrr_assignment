@@ -2,6 +2,7 @@ import { quizData } from '@/data/quizData';
 import QuizUI from '@/components/quiz/QuizUI';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../../api/auth/[...nextauth]/route';
+import Head from 'next/head';
 
 const getData = async (slug) => {
     const res = await fetch(`${process.env.NEXTAUTH_URL}/api/users/${slug}`, {
@@ -25,7 +26,9 @@ const Quiz = async ({ searchParams }) => {
     const userData = await getData(user.email)
 
     return (
-        <QuizUI selectedCategory={selectedCategory} currentScore={userData.score} userId={userData.id} />
+        <>
+            <QuizUI selectedCategory={selectedCategory} currentScore={userData.score} userId={userData.id} />
+        </>
     );
 };
 

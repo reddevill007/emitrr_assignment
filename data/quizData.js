@@ -3,6 +3,7 @@ export const quizData = [
     id: 0,
     category: "Programming",
     img: "/programming.png",
+    desc: "Dive into the world of code and algorithms with our Programming category. Test your coding prowess and knowledge of programming languages in challenging quizzes designed for developers and tech enthusiasts.",
     questions: [
       {
         question: "What does HTML stand for?",
@@ -99,6 +100,7 @@ export const quizData = [
     id: 1,
     category: "Physics",
     img: "/physics.png",
+    desc: "Embark on a journey through the laws of the universe in our Physics category. Delve into the mysteries of matter, energy, and the cosmos as you explore fascinating concepts and principles in the realm of physics.",
     questions: [
       {
         question: "What is the SI unit of force?",
@@ -181,6 +183,7 @@ export const quizData = [
     id: 2,
     category: "Maths",
     img: "/maths.png",
+    desc: "Unleash your mathematical genius and sharpen your problem-solving skills in our Mathematics category. From algebra to calculus, explore a variety of mathematical concepts and put your number-crunching abilities to the test.",
     questions: [
       {
         question: "What is the value of π (pi) to two decimal places?",
@@ -263,6 +266,7 @@ export const quizData = [
     id: 3,
     category: "Computer Networks",
     img: "/cn.png",
+    desc: "Connect to the digital world of Computer Networking (CN). Explore the intricacies of data transmission, network protocols, and cybersecurity in this category designed for IT professionals and networking enthusiasts.",
     questions: [
       {
         question: "What does 'HTTP' stand for in the context of the internet?",
@@ -362,6 +366,7 @@ export const quizData = [
     id: 4,
     category: "Aptitude",
     img: "/apti.jpeg",
+    desc: "Hone your problem-solving and critical thinking skills with our Aptitude category. Perfect for job seekers and students preparing for competitive exams, these quizzes will help you master the art of logical reasoning and quick calculations.",
     questions: [
       {
         question: "If x = 3 and y = 5, what is the value of 2x + 3y?",
@@ -431,6 +436,7 @@ export const quizData = [
     id: 5,
     category: "Operating System",
     img: "/os.png",
+    desc: "Step into the heart of computing with our Operating Systems (OS) category. Discover the inner workings of computer operating systems, from memory management to process scheduling, in this knowledge-packed category.",
     questions: [
       {
         question: "What is the main function of an operating system?",

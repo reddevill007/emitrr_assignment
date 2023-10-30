@@ -6,18 +6,22 @@ import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { ColorRing } from "react-loader-spinner";
 import { toast } from "sonner";
 
 const signInPage = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false)
 
     const router = useRouter();
 
     const handleSignin = async () => {
+        setLoading(true)
         if (!email || !name || !password) {
             toast.error("All the feilds are required")
+            setLoading(false)
             return;
         }
         try {
@@ -38,6 +42,8 @@ const signInPage = () => {
             }
         } catch (error) {
             console.log(error);
+        } finally {
+            setLoading(false)
         }
     };
 
@@ -48,7 +54,16 @@ const signInPage = () => {
                 <Input type="text" placeholder="Name..." onChange={(e) => setName(e.target.value)} />
                 <Input type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} />
                 <Input type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)} />
-                <Button className="border rounded-[10px]" onClick={handleSignin}>Create account</Button>
+                <Button className="border rounded-[10px]" onClick={handleSignin}>
+                    {loading ? <ColorRing
+                        visible={true}
+                        height="40"
+                        width="40"
+                        ariaLabel="blocks-loading"
+                        wrapperClass="blocks-wrapper"
+                        colors={['#000']}
+                    /> : "Create account"}
+                </Button>
                 <Link href="/login" className="underline underline-offset-2 text-center">Already have an account</Link>
             </div>
         </section>

@@ -5,6 +5,7 @@ import QuizQuestion from '@/components/quiz/QuizQuestion';
 import { useSession } from 'next-auth/react';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
+import { Button } from "../ui/button";
 
 const QuizUI = ({ selectedCategory, currentScore, userId }) => {
     const router = useRouter();
@@ -49,7 +50,7 @@ const QuizUI = ({ selectedCategory, currentScore, userId }) => {
                     ))}
                 </div>
 
-                <button className="border rounded-[10px] px-6 py-4 bg-black" onClick={() => handlesubmit(userId, currentScore + score)}>Submit</button>
+                <Button className="border rounded-[10px] px-10 border-gray-700 py-2" onClick={() => handlesubmit(userId, currentScore + score)}>Submit</Button>
             </div>
         </div>
     )

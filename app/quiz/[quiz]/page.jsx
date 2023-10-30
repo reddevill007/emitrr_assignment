@@ -4,7 +4,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '../../api/auth/[...nextauth]/route';
 
 const getData = async (slug) => {
-    const res = await fetch(`http://localhost:3000/api/users/${slug}`, {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/users/${slug}`, {
         cache: "no-cache",
     });
     if (!res.ok) {

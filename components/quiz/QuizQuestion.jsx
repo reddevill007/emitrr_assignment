@@ -12,7 +12,7 @@ const QuizQuestion = ({ question, queNo, setScore, score }) => {
         if (option === correctAnswer) {
             setScore(score + marks);
         }
-        toast.success('Be at the area 10 minutes before the event time')
+        toast.success('Your answer has been marked')
         setselectedAnswer(i)
     }
 
